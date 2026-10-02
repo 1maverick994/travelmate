@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelMate</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="workflow-style.css" />
+</head>
+<body>
+  <header class="wf2-header">
+    <h1>TravelMate</h1>
+  </header>
+
+  <div class="wf2-toolbar-top">
+    <label>Workflow:
+      <select id="wf2-select"></select>
+    </label>
+    <input id="wf2-name" placeholder="Nome workflow" />
+    <button id="wf2-new">Nuovo</button>
+    <button id="wf2-save">Salva</button>
+    <button id="wf2-delete" class="wf2-btn-danger">Elimina</button>
+    <button id="wf2-export">Esporta JSON</button>
+    <label class="wf2-file-label">Importa JSON
+      <input id="wf2-import" type="file" accept="application/json" hidden />
+    </label>
+    <button id="wf2-run" class="wf2-btn-run">&#9654; Esegui</button>
+  </div>
+
+  <main id="wf2-editor" class="wf2-root"></main>
+
+  <div id="wf2-blueprint" class="wf2-blueprint" style="display:none"></div>
+
+  <section class="wf2-results">
+    <div>
+      <h2>Output</h2>
+      <div id="wf2-output" class="wf2-output"></div>
+    </div>
+    <div>
+      <h2>Log esecuzione</h2>
+      <div id="wf2-log" class="wf2-log-console"></div>
+    </div>
+  </section>
+
+  <script src="dist/workflow-bundle.js"></script>
+</body>
+</html>

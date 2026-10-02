@@ -1,0 +1,123 @@
+:root {
+  --bg: #f7f8fa;
+  --accent: #2563eb;
+  --idle: #cbd5e1;
+  --loading: #facc15;
+  --done: #22c55e;
+  --error: #ef4444;
+  --text: #1e293b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  padding: 24px 32px 8px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+}
+
+header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+main {
+  padding: 24px 32px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.wf-control {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wf-control label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  background: white;
+  min-width: 160px;
+}
+
+select:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+#status {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 16px;
+  min-height: 18px;
+}
+
+#workflow {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.wf-box {
+  fill: white;
+  stroke: var(--idle);
+  stroke-width: 2;
+  transition: stroke 0.25s ease, fill 0.25s ease;
+}
+
+.wf-title {
+  text-anchor: middle;
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--text);
+}
+
+.wf-value {
+  text-anchor: middle;
+  font-size: 11px;
+  fill: #64748b;
+}
+
+.wf-arrow {
+  stroke: var(--idle);
+  stroke-width: 2;
+}
+
+.wf-arrowhead {
+  fill: var(--idle);
+}
+
+.wf-node.loading .wf-box { stroke: var(--loading); fill: #fffbea; }
+.wf-node.done .wf-box { stroke: var(--done); fill: #f0fdf4; }
+.wf-node.error .wf-box { stroke: var(--error); fill: #fef2f2; }
+
+footer {
+  padding: 8px 32px 32px;
+  font-size: 12px;
+  color: #94a3b8;
+}

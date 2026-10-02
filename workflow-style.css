@@ -1,0 +1,66 @@
+/* Stili motore workflow dinamici (TravelMate) */
+
+.wf2-header { display:flex; align-items:center; justify-content:space-between; padding:12px 20px; background:#1b3a5c; color:#fff; }
+.wf2-header a { color:#cfe3fb; text-decoration:none; }
+
+.wf2-toolbar-top { display:flex; gap:8px; align-items:center; flex-wrap:wrap; padding:10px 20px; background:#f3f5f7; border-bottom:1px solid #ddd; }
+.wf2-toolbar-top input, .wf2-toolbar-top select { padding:6px 8px; border:1px solid #ccc; border-radius:4px; }
+.wf2-toolbar-top button { padding:6px 12px; border:1px solid #ccc; border-radius:4px; background:#fff; cursor:pointer; }
+.wf2-btn-run { background:#2e7d32 !important; color:#fff; border-color:#2e7d32 !important; font-weight:600; }
+.wf2-btn-danger { background:#c62828 !important; color:#fff; border-color:#c62828 !important; }
+.wf2-file-label { padding:6px 12px; border:1px solid #ccc; border-radius:4px; background:#fff; cursor:pointer; }
+
+.wf2-root { display:flex; flex-direction:column; }
+.wf2-toolbar { display:flex; gap:8px; align-items:center; padding:8px 20px; background:#eef1f4; border-bottom:1px solid #ddd; flex-wrap:wrap; }
+.wf2-toolbar button { padding:6px 10px; border:1px solid #ccc; border-radius:4px; background:#fff; cursor:pointer; }
+.wf2-btn-connect { background:#1565c0 !important; color:#fff; border-color:#1565c0 !important; }
+.wf2-btn-danger-small { margin-top:10px; padding:4px 8px; border:1px solid #c62828; color:#c62828; background:#fff; border-radius:4px; cursor:pointer; }
+.wf2-hint { font-size:12px; color:#555; }
+
+.wf2-body { display:flex; }
+.wf2-canvas-wrap { flex:1; overflow:auto; background:#fafbfc; background-image:radial-gradient(#e0e0e0 1px, transparent 1px); background-size:16px 16px; }
+.wf2-canvas { position:relative; width:1400px; height:250px; }
+.wf2-edges { position:absolute; top:0; left:0; pointer-events:none; }
+
+.wf2-node { position:absolute; padding:8px 10px; border-radius:8px; background:#fff; border:2px solid #90a4ae; box-shadow:0 1px 3px rgba(0,0,0,.15); cursor:move; display:flex; flex-direction:column; gap:4px; user-select:none; }
+.wf2-node strong { font-size:11px; letter-spacing:.05em; color:#37474f; }
+.wf2-node span { font-size:12px; color:#455a64; word-break:break-word; }
+.wf2-node-if { border-color:#1565c0; }
+.wf2-node-rest-call { border-color:#6a1b9a; }
+.wf2-node-output { border-color:#2e7d32; }
+.wf2-node-selected { outline:3px solid #ffca28; }
+.wf2-node-connecting { outline:3px dashed #1565c0; }
+.wf2-node-start::before { content:"START"; position:absolute; top:-18px; left:0; font-size:10px; font-weight:700; color:#2e7d32; }
+.wf2-node-active { box-shadow:0 0 0 4px rgba(255,202,40,.6); transition:box-shadow .2s ease; }
+.wf2-node-error { border-color:#c62828 !important; background:#ffebee; }
+
+.wf2-panel { width:280px; padding:14px; border-left:1px solid #ddd; background:#fff; }
+.wf2-panel h3 { margin-top:0; }
+.wf2-panel label { display:block; margin-bottom:10px; font-size:13px; color:#333; }
+.wf2-panel input, .wf2-panel select { width:100%; padding:6px; margin-top:4px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box; }
+.wf2-panel-empty { color:#888; font-size:13px; }
+
+.wf2-results { display:flex; gap:20px; padding:16px 20px; }
+.wf2-results > div { flex:1; }
+.wf2-output-box { padding:10px 12px; margin-bottom:8px; background:#e8f5e9; border:1px solid #2e7d32; border-radius:6px; font-weight:600; }
+.wf2-log-console { height:220px; overflow:auto; background:#0f1720; color:#d8e3ea; font-family:monospace; font-size:12px; padding:10px; border-radius:6px; }
+.wf2-log { padding:2px 0; }
+.wf2-log-error { color:#ff8a80; }
+.wf2-log-success { color:#a5d6a7; }
+
+/* Blueprint WaveBinder */
+.wf2-blueprint { margin:0 20px 4px; }
+.wf2-bp-details { border:1px solid #c5cae9; border-radius:6px; background:#f5f5ff; overflow:hidden; }
+.wf2-bp-summary { display:flex; align-items:center; gap:12px; padding:8px 14px; cursor:pointer; list-style:none; user-select:none; }
+.wf2-bp-summary::-webkit-details-marker { display:none; }
+.wf2-bp-title { font-weight:600; font-size:13px; color:#283593; }
+.wf2-bp-meta { font-size:12px; color:#5c6bc0; margin-left:auto; }
+.wf2-bp-body { padding:8px 14px 12px; font-family:monospace; font-size:12px; display:flex; flex-direction:column; gap:4px; }
+.wf2-bp-row { display:flex; align-items:baseline; gap:8px; }
+.wf2-bp-badge { font-size:10px; font-weight:700; padding:1px 6px; border-radius:10px; text-transform:uppercase; white-space:nowrap; }
+.wf2-bp-badge-rest    { background:#e1bee7; color:#6a1b9a; }
+.wf2-bp-badge-extract { background:#e8eaf6; color:#283593; }
+.wf2-bp-badge-if      { background:#e3f2fd; color:#1565c0; }
+.wf2-bp-badge-output  { background:#e8f5e9; color:#2e7d32; }
+.wf2-bp-name { color:#37474f; min-width:140px; }
+.wf2-bp-label { color:#78909c; }
