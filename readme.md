@@ -95,3 +95,8 @@ npm run build | npx serve .
 ```
 
 Then open the URL shown by `serve` in the browser.
+
+## 8. Live demo
+
+[[Watch the video!]](https://youtu.be/ST0M5JkJeAE)
+
